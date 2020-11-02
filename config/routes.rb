@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     get "/actor_path" => "actors#display_actor_action"
     get "/movies_path" => "movies#show_movies_action"
     get "/movie_path" => "movies#show_movie_action"
+    get "/query_path" => "movies#show_movie_action"
+    get "/url_segment_path/:input" => "movies#show_movie_action"
+    post "/body_param_path" => "movies#show_movie_action"
   end
 end
