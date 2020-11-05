@@ -1,6 +1,8 @@
-{
-  id: @movies.id,
-  title: @movies.title,
-  year: @movie.year,
-  plot: @movie.plot,
-}
+@movies.map do |movie|
+  {
+    id: movie.id,
+    title: movie.title,
+    year: movie.year,
+    plot: movie.plot,
+  }
+end
