@@ -21,10 +21,14 @@ class Api::MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find_by(id: params[:id])
+    input_value = params[:id]
+    @movie = Movie.find_by(id: input_value)
     @movie.title = params[:title] || @movie.title
     @movie.year = params[:year] || @movie.year
     @movie.plot = params[:plot] || @movie.plot
+    @movie.english = params[:english] || @movie.english
+    @movie.director = params[:director] || @movie.director
+    @movie.save
     render "show.json.jb"
   end
 
