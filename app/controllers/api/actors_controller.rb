@@ -1,6 +1,8 @@
 class Api::ActorsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
-    @actors = Actor.order (age: :desc)
+    @actors = Actor.all
     render "index.json.jb"
   end
 
@@ -17,7 +19,7 @@ class Api::ActorsController < ApplicationController
       known_for: params[:known_for],
       age: params[:age],
       gender: params[:gender],
-      movie_id: params[:movie_id]
+      movie_id: params[:movie_id],
     })
     if @actor.save
       render "show.json.jb"

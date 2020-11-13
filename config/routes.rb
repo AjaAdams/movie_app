@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     patch "/actors/:id" => "actors#update"
     post "/actors" => "actors#create"
     delete "/actors/:id" => "actors#destroy"
+
     get "/movies" => "movies#index"
     get "/movies/:id" => "movies#show"
     patch "/movies/:id" => "movies#update"
     post "/movies" => "movies#create"
     delete "/movies/:id" => "movies#destroy"
+
+    post "/users" => "users#create"
   end
 end
