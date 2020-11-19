@@ -9,7 +9,7 @@ class Api::MoviesController < ApplicationController
   def show
     input_value = params[:id]
     @movie = Movie.find_by(id: input_value)
-    render "show.json.jb"
+    render "show.html.erb"
   end
 
   def create
